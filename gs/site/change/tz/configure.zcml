@@ -10,6 +10,13 @@
     name="admin_change_tz.html"
     class=".change.Change"
     permission="zope2.ManageProperties"/>
-    
+
+  <!--Link for the Site Admin page-->
+  <browser:viewlet name="gs-site-change-tz-link"
+    manager="gs.site.change.base.interfaces.ISiteAdminLinks"
+    template="browser/templates/changelink.pt"
+    permission="zope2.ManageProperties"
+    weight="6" />
+      
 </configure>
 
