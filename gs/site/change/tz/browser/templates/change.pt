@@ -1,34 +1,51 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
   xmlns:tal="http://xml.zope.org/namespaces/tal"
   xmlns:metal="http://xml.zope.org/namespaces/metal"
-  metal:use-macro="context/@@groupserver_site_home_layout/page">
+  metal:use-macro="context/@@groupserver_layout/page">
   <head>
     <title metal:fill-slot="title">
       <span tal:replace="string:${view/label}: ${view/siteInfo/name}">
-        Edit Profile
+        Change
       </span>
     </title>
+    <tal:block metal:fill-slot="metadata">
+      <link rel="up" href="/" title="Site Home" 
+            tal:attributes="title string:${view/siteInfo/name} Home;"/>
+    </tal:block>
   </head>
   <body>
     <tal:block content="structure provider:groupserver.FormStatusMessage"
       define="errors view/errors; status view/status; widgets view/widgets"
       metal:fill-slot="messages">&#160;</tal:block>
-    <tal:block metal:fill-slot="body">
-      <form enctype="multipart/form-data"  method="post" action="."
-        tal:attributes="action request/URL" id="edit-profile">
-        <h1 tal:content="view/label">Edit Profile</h1>
-        <tal:block define="widgets view/widgets"
-          replace="structure provider:groupserver.FormWidgets"/>
-        <div class="buttons" tal:condition="view/availableActions">
-          <tal:block repeat="action view/actions">
-            <div class="formelementbutton">
-              <span tal:replace="structure action/render">Button</span>
-            </div>
-          </tal:block>
-        </div><!--buttons-->
-      </form>
-    </tal:block>
-    <tal:block metal:fill-slot="javascript">
+    <ul metal:fill-slot="breadcrumb">
+      <li><a tal:attributes="title string:${view/siteInfo/name} Homepage"
+             href="/" title="Home">&#8962;</a></li>
+      <li>
+        <span tal:content="view/label">This group</span>
+      </li>
+    </ul>
+    <form metal:fill-slot="body"
+          id="gs-site-change-tz" enctype="multipart/form-data"  
+          method="post" action="."
+          tal:attributes="action request/URL" id="edit-profile">
+      <h1 tal:content="view/label">Edit Profile</h1>
+      <p>
+        The site timezone changes the timezone new members get by default 
+        when they join a group on this site. 
+        To change the site timezone select a zone in the list below, and
+        click the <samp class="button">Change</samp> button.
+      </p>
+      <tal:block define="widgets view/widgets"
+                 replace="structure provider:groupserver.FormWidgets"/>
+      <div class="buttons" tal:condition="view/availableActions">
+        <tal:block repeat="action view/actions">
+          <div class="formelementbutton">
+            <span tal:replace="structure action/render">Button</span>
+          </div>
+        </tal:block>
+      </div><!--buttons-->
+    </form>
+    <!--tal:block metal:fill-slot="javascript">
       <script type="text/javascript"
         src="/++resource++check_required-20071214.js">&#160;</script>
       <script type="text/javascript"
@@ -39,7 +56,7 @@
       </script>
       <script type="text/javascript"
         src="/++resource++popup_help-20071218.js">&#160;</script>
-    </tal:block><!--javascript-->
+    </tal:block--><!--javascript-->
   </body>
 </html>
 
