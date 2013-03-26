@@ -32,7 +32,6 @@ setup(name='gs.site.change.tz',
     zip_safe=True,
     install_requires=[
         'setuptools',
-        'setuptools',
         'zope.formlib',
         'zope.interface',
         'zope.schema',
