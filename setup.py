@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 import os
 from setuptools import setup, find_packages
 from version import get_version
@@ -32,7 +32,15 @@ setup(name='gs.site.change.tz',
     zip_safe=True,
     install_requires=[
         'setuptools',
-        # -*- Extra requirements: -*-
+        'setuptools',
+        'zope.formlib',
+        'zope.interface',
+        'zope.schema',
+        'zope.viewlet',
+        'Zope2',
+        'gs.content.form',
+        'gs.help',
+        'gs.site.change.base',
     ],
     entry_points="""
     # -*- Entry points: -*-
