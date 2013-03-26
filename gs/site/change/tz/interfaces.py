@@ -14,4 +14,3 @@ class IGSSiteTimezone(Interface):
       required=True,
       default=u'UTC',
       vocabulary=timezones)
-
