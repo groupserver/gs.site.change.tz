@@ -7,7 +7,7 @@ from interfaces import IGSSiteTimezone
 
 
 class Change(SiteForm):
-    label = u'Change the Site Timezone'
+    label = u'Change the site timezone'
     pageTemplateFileName = 'browser/templates/change.pt'
     template = ZopeTwoPageTemplateFile(pageTemplateFileName)
     form_fields = form.Fields(IGSSiteTimezone, render_context=False)
