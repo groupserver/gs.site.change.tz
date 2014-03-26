@@ -26,13 +26,13 @@
         <span tal:content="view/label">This group</span>
       </li>
     </ul>
-    <form metal:fill-slot="body" id="gs-site-change-tz" 
-          class="gs-content-js-required" enctype="multipart/form-data" 
+    <form metal:fill-slot="body" id="gs-site-change-tz"
+          class="gs-content-js-required" enctype="multipart/form-data"
           method="post" action="." tal:attributes="action request/URL">
       <h1 tal:content="view/label">Edit Profile</h1>
       <p>
-        The site timezone changes the timezone new members get by default 
-        when they join a group on this site. 
+        The site timezone changes the timezone new members get by default
+        when they join a group on this site.
         To change the site timezone select a zone in the list below, and
         click the <samp class="button">Change</samp> button.
       </p>
@@ -51,4 +51,3 @@
     </script>
   </body>
 </html>
-
