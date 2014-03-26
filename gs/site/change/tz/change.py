@@ -1,13 +1,27 @@
 # -*- coding: utf-8 -*-
+##############################################################################
+#
+# Copyright © 2012, 2013, 2014 OnlineGroups.net and Contributors.
+# All Rights Reserved.
+#
+# This software is subject to the provisions of the Zope Public License,
+# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
+# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+# FOR A PARTICULAR PURPOSE.
+#
+##############################################################################
+from __future__ import absolute_import, unicode_literals
 from zope.cachedescriptors.property import Lazy
 from zope.formlib import form
 from Products.Five.browser.pagetemplatefile import ZopeTwoPageTemplateFile
 from gs.content.form import SiteForm, select_widget
-from interfaces import IGSSiteTimezone
+from .interfaces import IGSSiteTimezone
 
 
 class Change(SiteForm):
-    label = u'Change the site timezone'
+    label = 'Change the site timezone'
     pageTemplateFileName = 'browser/templates/change.pt'
     template = ZopeTwoPageTemplateFile(pageTemplateFileName)
     form_fields = form.Fields(IGSSiteTimezone, render_context=False)
@@ -32,7 +46,7 @@ class Change(SiteForm):
             self.request, form=self, data=data,
             ignore_request=ignore_request)
 
-    @form.action(label=u'Change', failure='handle_change_action_failure')
+    @form.action(label='Change', failure='handle_change_action_failure')
     def handle_change(self, action, data):
         if not hasattr(self.divisionConfiguration, 'tz'):
             self.divisionConfiguration.manage_addProperty('tz',
@@ -40,14 +54,12 @@ class Change(SiteForm):
         else:
             self.divisionConfiguration.manage_changeProperties(tz=data['tz'])
 
-        self.status = u'<p>The timezone on <a href="/">%s</a> has been '\
+        self.status = '<p>The timezone on <a href="/">%s</a> has been '\
             'changed to <code>%s</code>.</p>' % \
             (self.siteInfo.name, data['tz'])
-        assert type(self.status) == unicode
 
     def handle_change_action_failure(self, action, data, errors):
         if len(errors) == 1:
-            self.status = u'<p>There is an error:</p>'
+            self.status = '<p>There is an error:</p>'
         else:
-            self.status = u'<p>There are errors:</p>'
-        assert type(self.status) == unicode
+            self.status = '<p>There are errors:</p>'
