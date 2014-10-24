@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-10-24 20:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ./change.py:69
+msgid "<p>There are errors:</p>"
+msgstr ""
+
+#: ./change.py:67
+msgid "<p>There is an error:</p>"
+msgstr ""
+
+#: ./change.py:50
+msgid "Change"
+msgstr "Changez"
+
+#: ./change.py:25
+msgid "Change the site timezone"
+msgstr "Changez le fuseau horaire du site"
+
+#: ./interfaces.py:29
+msgid "The timezone you wish to use"
+msgstr ""
+
+#: ./interfaces.py:28
+msgid "Timezone"
+msgstr "Le fuseau horaire"
+
+#. Default: "The site timezone changes the timezone new members get by default when they join a group on this site. To change the site timezone select a zone in the list below, and click the <samp class=\"button\">Change</samp> button."
+#: ./browser/templates/change.pt:35
+msgid "change-intro"
+msgstr "Choisissez le fuseau horaire pour le site web."
+
+#. Default: "Change the default <strong>timezone.</strong>"
+#: ./browser/templates/changelink.pt:4
+msgid "change-link"
+msgstr "Changez le fuseau horaire du site"
+
+#. Default: "<p>The timezone on <a href=\"/\">${siteName}</a> has been changed to <code>${tz}</code>.</p>"
+#: ./change.py:59
+msgid "status-success"
+msgstr "<p>Le fuseau horaire du site ete <code>${tz}</code>.</p>"
+

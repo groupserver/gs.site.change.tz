@@ -1,4 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="gs.site.change.tz"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       metal:use-macro="context/@@groupserver_layout/page">
@@ -30,11 +32,12 @@
           class="gs-content-js-required" enctype="multipart/form-data"
           method="post" action="." tal:attributes="action request/URL">
       <h1 tal:content="view/label">Edit Profile</h1>
-      <p>
-        The site timezone changes the timezone new members get by default
-        when they join a group on this site.
-        To change the site timezone select a zone in the list below, and
-        click the <samp class="button">Change</samp> button.
+      <p i18n:translate="change-intro" class="intro">
+        The site timezone changes the timezone new members get by
+        default when they join a group on this site.
+        To change the site timezone select a zone in the list
+        below, and click the <samp class="button">Change</samp>
+        button.
       </p>
       <tal:block define="widgets view/widgets"
                  replace="structure provider:groupserver.FormWidgets"/>

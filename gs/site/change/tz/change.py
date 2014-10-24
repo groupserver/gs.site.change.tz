@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+############################################################################
 #
 # Copyright © 2012, 2013, 2014 OnlineGroups.net and Contributors.
 # All Rights Reserved.
@@ -11,17 +11,18 @@
 # WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
 # FOR A PARTICULAR PURPOSE.
 #
-##############################################################################
+############################################################################
 from __future__ import absolute_import, unicode_literals
 from zope.cachedescriptors.property import Lazy
 from zope.formlib import form
 from Products.Five.browser.pagetemplatefile import ZopeTwoPageTemplateFile
 from gs.content.form.base import SiteForm, select_widget
 from .interfaces import IGSSiteTimezone
+from . import GSMessageFactory as _
 
 
 class Change(SiteForm):
-    label = 'Change the site timezone'
+    label = _('Change the site timezone')
     pageTemplateFileName = 'browser/templates/change.pt'
     template = ZopeTwoPageTemplateFile(pageTemplateFileName)
     form_fields = form.Fields(IGSSiteTimezone, render_context=False)
@@ -46,20 +47,23 @@ class Change(SiteForm):
             self.request, form=self, data=data,
             ignore_request=ignore_request)
 
-    @form.action(label='Change', failure='handle_change_action_failure')
+    @form.action(label=_('Change'), failure='handle_change_action_failure')
     def handle_change(self, action, data):
         if not hasattr(self.divisionConfiguration, 'tz'):
-            self.divisionConfiguration.manage_addProperty('tz',
-                data['tz'], 'string')
+            self.divisionConfiguration.manage_addProperty(
+                'tz', data['tz'], 'string')
         else:
-            self.divisionConfiguration.manage_changeProperties(tz=data['tz'])
+            self.divisionConfiguration.manage_changeProperties(
+                tz=data['tz'])
 
-        self.status = '<p>The timezone on <a href="/">%s</a> has been '\
-            'changed to <code>%s</code>.</p>' % \
-            (self.siteInfo.name, data['tz'])
+        self.status = _(
+            'status-success', '<p>The timezone on '
+            '<a href="/">${siteName}</a> has been changed to '
+            '<code>${tz}</code>.</p>',
+            maping={'siteName': self.siteInfo.name, 'tz': data['tz']})
 
     def handle_change_action_failure(self, action, data, errors):
         if len(errors) == 1:
-            self.status = '<p>There is an error:</p>'
+            self.status = _('<p>There is an error:</p>')
         else:
-            self.status = '<p>There are errors:</p>'
+            self.status = _('<p>There are errors:</p>')

@@ -1,4 +1,7 @@
-<li id="gs-site-change-tz-link">
-  <a href="/admin_change_tz.html">Change the default
-    <strong>timezone.</strong></a>
+<li xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="gs.site.change.tz"
+    id="gs-site-change-tz-link">
+  <a i18n:translate="change-link"
+     href="/admin_change_tz.html">Change the default
+     <strong>timezone.</strong></a>
 </li>

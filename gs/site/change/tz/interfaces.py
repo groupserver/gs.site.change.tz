@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+############################################################################
 #
 # Copyright © 2012, 2013, 2014 OnlineGroups.net and Contributors.
 # All Rights Reserved.
@@ -11,20 +11,22 @@
 # WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
 # FOR A PARTICULAR PURPOSE.
 #
-##############################################################################
+############################################################################
 from __future__ import unicode_literals
 from pytz import common_timezones
 from zope.interface import Interface
 from zope.schema import Choice
 from zope.schema.vocabulary import SimpleVocabulary
+from . import GSMessageFactory as _
+
 
 timezones = SimpleVocabulary.fromValues(common_timezones)
 
 
 class IGSSiteTimezone(Interface):
-
-    tz = Choice(title='Timezone',
-                description='The timezone you wish to use',
+    'The site timezone schema'
+    tz = Choice(title=_('Timezone'),
+                description=_('The timezone you wish to use'),
                 vocabulary=timezones,
                 required=True,
                 default='UTC',)
