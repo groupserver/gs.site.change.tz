@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.1.1 (2014-11-07)
+------------------
+
+* Fixing an incorrect keyword argument
+
 2.1.0 (2014-10-24)
 ------------------
 * Adding internationalisation

@@ -60,7 +60,7 @@ class Change(SiteForm):
             'status-success', '<p>The timezone on '
             '<a href="/">${siteName}</a> has been changed to '
             '<code>${tz}</code>.</p>',
-            maping={'siteName': self.siteInfo.name, 'tz': data['tz']})
+            mapping={'siteName': self.siteInfo.name, 'tz': data['tz']})
 
     def handle_change_action_failure(self, action, data, errors):
         if len(errors) == 1:
