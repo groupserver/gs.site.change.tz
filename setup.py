@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 ############################################################################
 #
-# Copyright © 2011, 2012, 2013, 2014 OnlineGroups.net and Contributors.
+# Copyright © 2011, 2012, 2013, 2014, 2015 OnlineGroups.net and
+# Contributors.
+#
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,
@@ -37,6 +39,7 @@ setup(
         "Intended Audience :: Developers",
         'License :: OSI Approved :: Zope Public License',
         "Natural Language :: English",
+        "Natural Language :: French",
         "Operating System :: POSIX :: Linux",
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
@@ -56,7 +59,8 @@ setup(
         'zope.browserpage',
         'zope.cachedescriptors',
         'zope.formlib',
-        'zope.i18n',
+        'zope.i18n[compile]',
+        'zope.i18nmessageid',
         'zope.interface',
         'zope.schema',
         'zope.tal',

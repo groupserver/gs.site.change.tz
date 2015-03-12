@@ -26,8 +26,12 @@ site-administration box.
 Resources
 =========
 
-- Code repository: https://github.com/groupserver/gs.site.change.tz/
-- Questions and comments to http://groupserver.org/groups/development/
+- Code repository:
+  https://github.com/groupserver/gs.site.change.tz/
+- Translations:
+  https://www.transifex.com/projects/p/gs-site-change-tz/
+- Questions and comments to
+  http://groupserver.org/groups/development/
 - Report bugs at https://redmine.iopen.net/projects/groupserver/
 
 .. _GroupServer.org: http://groupserver.org/
