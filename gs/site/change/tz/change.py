@@ -22,7 +22,7 @@ from . import GSMessageFactory as _
 
 
 class Change(SiteForm):
-    label = _('Change the site timezone')
+    label = _('change-timezone', 'Change the site timezone')
     pageTemplateFileName = 'browser/templates/change.pt'
     template = ZopeTwoPageTemplateFile(pageTemplateFileName)
     form_fields = form.Fields(IGSSiteTimezone, render_context=False)
@@ -47,7 +47,8 @@ class Change(SiteForm):
             self.request, form=self, data=data,
             ignore_request=ignore_request)
 
-    @form.action(label=_('Change'), failure='handle_change_action_failure')
+    @form.action(label=_('change-button', 'Change'), name='change',
+                 failure='handle_change_action_failure')
     def handle_change(self, action, data):
         if not hasattr(self.divisionConfiguration, 'tz'):
             self.divisionConfiguration.manage_addProperty(
@@ -56,14 +57,15 @@ class Change(SiteForm):
             self.divisionConfiguration.manage_changeProperties(
                 tz=data['tz'])
 
+        site = '<a href="/">{0}</a>'.format(self.siteInfo.name)
+        tz = '<code>{0}</code>'.format(data['tz'])
         self.status = _(
-            'status-success', '<p>The timezone on '
-            '<a href="/">${siteName}</a> has been changed to '
-            '<code>${tz}</code>.</p>',
-            mapping={'siteName': self.siteInfo.name, 'tz': data['tz']})
+            'status-success', 'The timezone on ${siteName} has been '
+            'changed to ${tz}.', mapping={'siteName': site, 'tz': tz})
 
     def handle_change_action_failure(self, action, data, errors):
         if len(errors) == 1:
-            self.status = _('<p>There is an error:</p>')
+            s = _('single-error', 'There is an error:')
         else:
-            self.status = _('<p>There are errors:</p>')
+            s = _('multiple-errors', 'There are errors:')
+        self.status = '<p>{0}</p>'.format(s)

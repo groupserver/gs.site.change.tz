@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-10-24 20:44+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"POT-Creation-Date: 2015-03-12 21:39+0000\n"
+"PO-Revision-Date: 2015-03-12 14:40-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,42 +14,53 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ./change.py:69
-msgid "<p>There are errors:</p>"
-msgstr ""
-
-#: ./change.py:67
-msgid "<p>There is an error:</p>"
-msgstr ""
-
+#. Default: "Change"
 #: ./change.py:50
-msgid "Change"
-msgstr ""
-
-#: ./change.py:25
-msgid "Change the site timezone"
-msgstr ""
-
-#: ./interfaces.py:29
-msgid "The timezone you wish to use"
-msgstr ""
-
-#: ./interfaces.py:28
-msgid "Timezone"
-msgstr ""
+msgid "change-button"
+msgstr "Change"
 
 #. Default: "The site timezone changes the timezone new members get by default when they join a group on this site. To change the site timezone select a zone in the list below, and click the <samp class=\"button\">Change</samp> button."
-#: ./browser/templates/change.pt:35
+#: ./browser/templates/change.pt:36
 msgid "change-intro"
-msgstr ""
+msgstr "The site timezone changes the timezone new members get by default when they join a group on this site. To change the site timezone select a zone in the list below, and click the <samp class=\"button\">Change</samp> button."
 
 #. Default: "Change the default <strong>timezone.</strong>"
 #: ./browser/templates/changelink.pt:4
 msgid "change-link"
-msgstr ""
+msgstr "Change the default <strong>timezone.</strong>"
 
-#. Default: "<p>The timezone on <a href=\"/\">${siteName}</a> has been changed to <code>${tz}</code>.</p>"
-#: ./change.py:59
+#. Default: "Change the site timezone"
+#: ./change.py:25
+msgid "change-timezone"
+msgstr "Change the site timezone"
+
+#. Default: "There are errors:"
+#: ./change.py:70
+msgid "multiple-errors"
+msgstr "There are errors:"
+
+#. Default: "There is an error:"
+#: ./change.py:68
+msgid "single-error"
+msgstr "There is an error:"
+
+#. Default: "Site home page"
+#: ./browser/templates/change.pt:24
+msgid "site-home-page"
+msgstr "Site homepage"
+
+#. Default: "The timezone on ${siteName} has been changed to ${tz}."
+#: ./change.py:62
 msgid "status-success"
-msgstr ""
+msgstr "The timezone on ${siteName} has been changed to ${tz}."
+
+#. Default: "The timezone you wish to use"
+#: ./interfaces.py:30
+msgid "timezone-help"
+msgstr "The timezone you wish to use"
+
+#. Default: "Timezone"
+#: ./interfaces.py:29
+msgid "timezone-label"
+msgstr "Timezone"
 

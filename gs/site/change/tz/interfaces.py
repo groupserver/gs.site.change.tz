@@ -25,8 +25,9 @@ timezones = SimpleVocabulary.fromValues(common_timezones)
 
 class IGSSiteTimezone(Interface):
     'The site timezone schema'
-    tz = Choice(title=_('Timezone'),
-                description=_('The timezone you wish to use'),
-                vocabulary=timezones,
-                required=True,
-                default='UTC',)
+    tz = Choice(
+        title=_('timezone-label', 'Timezone'),
+        description=_('timezone-help', 'The timezone you wish to use'),
+        vocabulary=timezones,
+        required=True,
+        default='UTC',)

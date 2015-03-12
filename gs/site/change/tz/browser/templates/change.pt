@@ -21,7 +21,8 @@
       <li>
         <a href="/" class="icon-alone">
           <span aria-hidden="true" data-icon="&#x2302;"></span>
-          <span class="screen-reader-text">Site home page</span>
+          <span class="screen-reader-text"
+                i18n:translate="site-home-page">Site home page</span>
         </a>
       </li>
       <li>
