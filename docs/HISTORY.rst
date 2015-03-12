@@ -1,6 +1,15 @@
 Changelog
 =========
 
+2.1.2 (2015-03-12)
+------------------
+
+* Adding support for Transifex_
+* Adding a French translation
+
+.. _Transifex:
+   https://www.transifex.com/projects/p/gs-site-change-tz/
+
 2.1.1 (2014-11-07)
 ------------------
 
@@ -48,3 +57,5 @@ Changelog
 ------------------
 
 * Initial commit
+
+..  LocalWords:  Changelog Transifex GitHub
